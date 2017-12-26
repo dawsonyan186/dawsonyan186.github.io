@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html lang="">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <title>实现jQuery的API | Dawson</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x4F7F;&amp;#x7528; DOM API &amp;#x5B9E;&amp;#x73B0;jQuery &amp;#x5728;window&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x5168;&amp;#x5C40;jquery&amp;#x65B9;&amp;#x6CD5; 12345678910window.jQuery = function(nodeOrSelector) {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现jQuery的API">
+<meta property="og:url" content="http://yoursite.com/2017/12/26/实现jQuery的API/index.html">
+<meta property="og:site_name" content="Dawson">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528; DOM API &amp;#x5B9E;&amp;#x73B0;jQuery &amp;#x5728;window&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x5168;&amp;#x5C40;jquery&amp;#x65B9;&amp;#x6CD5; 12345678910window.jQuery = function(nodeOrSelector) {">
+<meta property="og:updated_time" content="2017-12-26T06:00:32.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实现jQuery的API">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528; DOM API &amp;#x5B9E;&amp;#x73B0;jQuery &amp;#x5728;window&amp;#x4E0A;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x5168;&amp;#x5C40;jquery&amp;#x65B9;&amp;#x6CD5; 12345678910window.jQuery = function(nodeOrSelector) {">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "Dawson",
+  "url": "http://yoursite.com"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>Dawson</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Dawson</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-实现jQuery的API" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    实现jQuery的API
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h2 id="&#x4F7F;&#x7528;-DOM-API-&#x5B9E;&#x73B0;jQuery"><a href="#&#x4F7F;&#x7528;-DOM-API-&#x5B9E;&#x73B0;jQuery" class="headerlink" title="&#x4F7F;&#x7528; DOM API &#x5B9E;&#x73B0;jQuery"></a>&#x4F7F;&#x7528; DOM API &#x5B9E;&#x73B0;jQuery</h2><ol class="ui list">
+<li><p>&#x5728;window&#x4E0A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5168;&#x5C40;jquery&#x65B9;&#x6CD5;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">window.jQuery = function(nodeOrSelector) {</div><div class="line">        let nodes = {};</div><div class="line">        nodes.addClass = function(classes) {</div><div class="line">           </div><div class="line">        }</div><div class="line">        nodes.text = function(text) {</div><div class="line">          </div><div class="line">        }</div><div class="line">        return nodes</div><div class="line">    }</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6839;&#x636E;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6765;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x7684;Node&#x8282;&#x70B9;<br> case-1&#xFF1A;nodeOrSelector&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5219;&#x67E5;&#x8BE2;<br> case-2&#xFF1A;nodeOrSelector&#x4E3A;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5219;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;hash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if (typeof nodeOrSelector === &apos;string&apos;) {</div><div class="line">	    let temp = document.querySelectorAll(nodeOrSelector);</div><div class="line">	    for (let i = 0; i &lt; temp.length; i++) {</div><div class="line">	        nodes[i] = temp[i];</div><div class="line">	    }</div><div class="line">	    nodes[&apos;length&apos;] = temp.length;</div><div class="line">	} else if (nodeOrSelector instanceof Node) {</div><div class="line">	    nodes = { 0: nodeOrSelector, length: 1 };</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5B9E;&#x73B0;addClass<br> case-1: classes&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x5230;&#x6837;&#x5F0F;&#x8868;&#x4E2D;<br> case-2&#xFF1A;class&#x4E3A;&#x6570;&#x7EC4;&#xFF0C;&#x5219;&#x5FAA;&#x73AF;&#x6DFB;&#x52A0;&#x5230;&#x6837;&#x5F0F;&#x8868;&#x4E2D;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">nodes.addClass = function(classes) {</div><div class="line">    if (typeof classes === &apos;string&apos;) {</div><div class="line">        this.classList.add(classes);</div><div class="line">    } else {</div><div class="line">        classes.foreach((value) =&gt; {</div><div class="line">            this.classList.add(value);</div><div class="line">        })</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x83B7;&#x53D6;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x6216;&#x8BBE;&#x7F6E;&#x6587;&#x672C;&#x5185;&#x5BB9;<br> case-1&#xFF1A;&#x5982;&#x679C;text&#x4E3A;undefined&#x5219;&#x83B7;&#x53D6;&#x6587;&#x672C;&#x5185;&#x5BB9;<br> case-2&#xFF1A;&#x5982;&#x679C;text&#x4E0D;&#x4E3A;undefined&#x5219;&#x8BBE;&#x7F6E;&#x6587;&#x672C;&#x5185;&#x5BB9;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">nodes.text = function(text) {</div><div class="line">    if (text === undefined) {</div><div class="line">        let texts = [];</div><div class="line">        for (let i = 0; i &lt; nodes.length; i++) {</div><div class="line">            texts.push(nodes[i].textContent);</div><div class="line">        }</div><div class="line">        return texts;</div><div class="line">    } else {</div><div class="line">        for (let i = 0; i &lt; nodes.length; i++) {</div><div class="line">            nodes[i].textContent = text;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7ED9;jquery&#x53D6;&#x4E00;&#x4E2A;&#x522B;&#x540D;$</p>
+</li>
+<li>&#x9A8C;&#x8BC1;<br> var $div = $(&#x2018;div&#x2019;) //&#x83B7;&#x53D6;jquery&#x5BF9;&#x8C61;<br> $div.addClass(&#x2018;red&#x2019;) // &#x7ED9;div&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x2018;red&#x2019;&#x7684;&#x7C7B;<br> $div.text(&#x2018;hello&#x2019;)//&#x7ED9;div&#x8BBE;&#x7F6E;&#x2018;hello&#x2019;&#x6587;&#x672C;&#x5185;&#x5BB9; </li>
+</ol>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-12-26T03:40:30.000Z" itemprop="datePublished">2017-12-26</time>
+
+    </span>
+    <span class="post-description-item">
+        
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/10/21/如何搭建博客/" class="ui tiny button">
+                    
+                    如何搭建博客
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#使用-DOM-API-实现jQuery"><span>使用 DOM API 实现jQuery</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">Dawson</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
